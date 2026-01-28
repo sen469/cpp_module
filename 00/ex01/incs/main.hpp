@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/27 15:38:06 by ssawa             #+#    #+#             */
-/*   Updated: 2026/01/27 16:03:25 by ssawa            ###   ########.fr       */
+/*   Created: 2026/01/28 14:13:06 by ssawa             #+#    #+#             */
+/*   Updated: 2026/01/28 15:24:27 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef MAIN_HPP
+# define MAIN_HPP
 
-int	main(int argc, char *argv[])
-{
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
-	}
-	for (int i = 1; i < argc; i++)
-	{
-		int	j = 0;
-		while (argv[i][j])
-		{
-			argv[i][j] = toupper(argv[i][j]);
-			j++;
-		}
-	}
-	for (int i = 1; i < argc; i++)
-	{
-		std::cout << argv[i];
-	}
-	std::cout << std::endl;
-	return (0);
-}
+
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
+
+int		ft_atoi(std::string s);
+bool	is_nbr(const std::string s);
+
+#endif

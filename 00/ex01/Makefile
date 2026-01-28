@@ -6,11 +6,11 @@
 #    By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/27 15:37:38 by ssawa             #+#    #+#              #
-#    Updated: 2026/01/27 16:00:39 by ssawa            ###   ########.fr        #
+#    Updated: 2026/01/27 21:08:38 by ssawa            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex01
 
 CXX = c++
 
@@ -51,7 +51,7 @@ $(NAME): $(OBJS)
 	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	@echo "\n\033[32m🎉🎉 Build complete: $(NAME) 🎉🎉\033[0m\n"
 
-%.o: %.c
+%.o: %.cpp
 	@$(CXX) $(CXXFLAGS) $(INCFLAGS) -c $< -o $@
 	@$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
 	@FILLED=$(COUNT); \

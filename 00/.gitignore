@@ -1,0 +1,4 @@
+*.o
+*.pdf
+.cache/
+compile_commands.json

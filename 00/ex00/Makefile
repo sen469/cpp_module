@@ -51,7 +51,7 @@ $(NAME): $(OBJS)
 	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	@echo "\n\033[32m🎉🎉 Build complete: $(NAME) 🎉🎉\033[0m\n"
 
-%.o: %.c
+%.o: %.cpp
 	@$(CXX) $(CXXFLAGS) $(INCFLAGS) -c $< -o $@
 	@$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
 	@FILLED=$(COUNT); \
