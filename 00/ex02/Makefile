@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/27 15:37:38 by ssawa             #+#    #+#              #
-#    Updated: 2026/01/28 15:32:36 by ssawa            ###   ########.fr        #
+#    Created: 2026/01/28 15:32:54 by ssawa             #+#    #+#              #
+#    Updated: 2026/01/28 15:35:17 by ssawa            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = dreams
 
 CXX = c++
 
@@ -74,6 +74,8 @@ re: fclean all
 
 run: all
 	@$(MAKE) $(MAKE_FLAGS) clean -s
-	@./$(NAME)
+	@./$(NAME) > out.log
+	diff out.log 19920104_091532.log
 
 .PHONY: all clean fclean re
+
