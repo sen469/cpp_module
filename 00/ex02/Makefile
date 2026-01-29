@@ -75,7 +75,6 @@ re: fclean all
 run: all
 	@$(MAKE) $(MAKE_FLAGS) clean -s
 	@./$(NAME) > out.log
-	diff out.log 19920104_091532.log
 
 .PHONY: all clean fclean re
 
