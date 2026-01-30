@@ -6,7 +6,7 @@
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 23:10:53 by ssawa             #+#    #+#             */
-/*   Updated: 2026/01/29 23:44:46 by ssawa            ###   ########.fr       */
+/*   Updated: 2026/01/30 11:33:04 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Zombie::Zombie(std::string name)
 
 Zombie::~Zombie(void)
 {
-	std::cout << this->name << " is destoryed" << std::endl;
+	std::cout << this->name << " is destroyed" << std::endl;
 }
 
 void	Zombie::announce(void) const
