@@ -6,7 +6,7 @@
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 11:05:57 by ssawa             #+#    #+#             */
-/*   Updated: 2026/01/30 11:31:18 by ssawa            ###   ########.fr       */
+/*   Updated: 2026/01/31 16:35:25 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	Zombie::setname(std::string name)
 {
-	this->name = name;
+	this->_name = name;
 }
 
 Zombie	*zombieHorde(int N, std::string name )

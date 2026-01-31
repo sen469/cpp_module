@@ -6,7 +6,7 @@
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 11:00:45 by ssawa             #+#    #+#             */
-/*   Updated: 2026/01/30 11:24:16 by ssawa            ###   ########.fr       */
+/*   Updated: 2026/01/31 16:35:21 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Zombie
 {
 	private:
-		std::string	name;
+		std::string	_name;
 	public:
 		Zombie( std::string name );
 		Zombie( void );
