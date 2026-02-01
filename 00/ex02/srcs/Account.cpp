@@ -21,7 +21,7 @@ int	Account::_totalNbDeposits= 0;
 int	Account::_totalNbWithdrawals = 0;
 
 // コンストラクタ
-Account::Account( int initial_deposit)
+Account::Account( int initial_deposit )
 {
 	_accountIndex = getNbAccounts();
 	_amount = initial_deposit;
@@ -107,7 +107,6 @@ void	Account::displayAccountsInfos( void )
 		<< ";deposits:" << getNbDeposits() \
 		<< ";withdrawals:" << getNbWithdrawals() << std::endl;
 }
-
 // display (end)
 
 // Deposit & Withdrawal

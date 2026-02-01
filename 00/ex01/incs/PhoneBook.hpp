@@ -14,11 +14,9 @@
 # define PHONEBOOK_HPP
 
 
-# define MAX_ID 2
+# define MAX_ID 8
 # define MAX_LENGTH 10
 
-# include <iostream>
-# include <iomanip>
 # include "Contact.hpp"
 
 class PhoneBook
@@ -35,6 +33,7 @@ class PhoneBook
 		void	addContact(const Contact &c);
 		void	show_all(void);
 		int		show_person(int idx);
+		int		get_count(void);
 };
 
 #endif

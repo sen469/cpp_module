@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cctype>
 #include <string>
 
 int	ft_atoi(std::string s)
@@ -28,12 +27,12 @@ int	ft_atoi(std::string s)
 
 bool	is_nbr(const std::string s)
 {
+	if (s.empty())
+		return (false);
 	for (int i = 0; i < (int)s.size(); i++)
 	{
 		if (!std::isdigit(s[i]))
-		{
 			return (false);
-		}
 	}
 	return (true);
 }

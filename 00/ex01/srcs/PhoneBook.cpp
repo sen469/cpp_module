@@ -13,6 +13,7 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 PhoneBook::PhoneBook(void)
@@ -26,7 +27,7 @@ void	PhoneBook::addContact(const Contact &c)
 	if (_count == MAX_ID)
 	{
 		_contact[_top] = c;
-		_top++;
+		_top = (_top + 1) % MAX_ID;
 	}
 	else
 	{
@@ -68,6 +69,7 @@ void	PhoneBook::show_all(void)
 	for (int i = 0; i < _count; i++)
 		_contact[(_top + i) % _count].print_row(i) ;
 	print_separator();
+	// std::cout << "__top = " << _top << std::endl;
 }
 
 int	PhoneBook::show_person(int idx)
@@ -76,4 +78,9 @@ int	PhoneBook::show_person(int idx)
 		return (1);
 	_contact[(_top + idx) % _count].print_person();
 	return (0);
+}
+
+int	PhoneBook::get_count(void)
+{
+	return (_count);
 }

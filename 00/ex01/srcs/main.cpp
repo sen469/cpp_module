@@ -11,8 +11,17 @@
 /* ************************************************************************** */
 
 #include "main.hpp"
+#include <iostream>
+#include <cstdlib>
 
-static void	do_ADD(Contact &c, PhoneBook &pb)
+static bool safe_getline(std::string &s)
+{
+	if (!std::getline(std::cin, s))
+		return false;
+	return true;
+}
+
+static void	do_add(Contact &c, PhoneBook &pb)
 {
 	std::string f_name;
 	std::string l_name;
@@ -21,15 +30,26 @@ static void	do_ADD(Contact &c, PhoneBook &pb)
 	std::string d_secret;
 
 	std::cout << "Enter First Name:";
-	std::getline(std::cin, f_name);
+	if (!safe_getline(f_name))
+		std::exit(0);
 	std::cout << "Enter Last Name:";
-	std::getline(std::cin, l_name);
+	if (!safe_getline(l_name))
+		std::exit(0);
 	std::cout << "Enter Nick Name:";
-	std::getline(std::cin, n_name);
+	if (!safe_getline(n_name))
+		std::exit(0);
 	std::cout << "Enter PhoneNumber:";
-	std::getline(std::cin, p_number);
+	if (!safe_getline(p_number))
+		std::exit(0);
 	std::cout << "Enter Darkest Secret:";
-	std::getline(std::cin, d_secret);
+	if (!safe_getline(d_secret))
+		std::exit(0);
+	if (f_name.empty() || l_name.empty() || n_name.empty() \
+		|| p_number.empty() || d_secret.empty())
+	{
+		std::cout << "No empty field" << std::endl;
+		return;
+	}
 	c.set_information(f_name, l_name, n_name, p_number, d_secret);
 	pb.addContact(c);
 }
@@ -39,7 +59,12 @@ static void	do_search(PhoneBook &pb)
 	std::string	s_idx;
 
 	pb.show_all();
-	while (std::cout << "Please Enter Index..." && std::getline(std::cin, s_idx))
+	if (pb.get_count() == 0)
+	{
+		std::cout << "PhoneBook is empty" << std::endl;
+		return;
+	}
+	while (std::cout << "Please Enter Index..." && safe_getline(s_idx))
 	{
 		if (is_nbr(s_idx))
 		{
@@ -49,6 +74,8 @@ static void	do_search(PhoneBook &pb)
 				break;
 		}
 	}
+	if (std::cin.eof())
+		std::exit(0);
 }
 
 int	main(void)
@@ -57,18 +84,19 @@ int	main(void)
 	Contact		c;
 	PhoneBook	pb;
 
-	std::cout << "Hello PhonBook World" << std::endl;
-	while (std::cout << "Enter Command..." << std::endl && \
-			std::getline(std::cin, cmd))
+	while (true)
 	{
+		std::cout << "Enter Command..." << std::endl;
+		if (!safe_getline(cmd))
+			break;
 		if (cmd == "ADD")
-			do_ADD(c, pb);
+			do_add(c, pb);
 		else if (cmd == "SEARCH")
 			do_search(pb);
 		else if (cmd == "EXIT")
 			break;
 		else
-			std::cout << "Enter ADD, SEARCH, EXIT" << std::endl;
+			std::cout << "Command is {ADD, SEARCH, EXIT}" << std::endl;
 	}
 	return (0);
 }
