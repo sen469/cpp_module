@@ -76,5 +76,4 @@ run: all
 	@$(MAKE) $(MAKE_FLAGS) clean -s
 	@./$(NAME) > out.log
 
-.PHONY: all clean fclean re
-
+.PHONY: all clean fclean re run
