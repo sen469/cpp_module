@@ -18,7 +18,7 @@ Point::Point(float x, float y): _x(x), _y(y) { }
 
 Point::Point(const Point &other)
 {
-	*this = other;
+	Point::operator=(other);
 }
 
 Point	&Point::operator=(const Point &other)

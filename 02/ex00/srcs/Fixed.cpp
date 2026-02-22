@@ -21,7 +21,7 @@ Fixed::Fixed(): _rawbits(0)
 Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
+	Fixed::operator=(other);
 }
 
 Fixed	&Fixed::operator=(const Fixed &other)

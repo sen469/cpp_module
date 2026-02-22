@@ -28,7 +28,7 @@ Fixed::Fixed(float f)
 
 Fixed::Fixed(const Fixed &other)
 {
-	*this = other;
+	Fixed::operator=(other);
 }
 bool	Fixed::operator<(const Fixed &other) const
 {
