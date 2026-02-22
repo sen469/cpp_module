@@ -25,13 +25,13 @@ class ClapTrap
 		ClapTrap &operator=(const ClapTrap &other);
 
 		// デストラクタ
-		~ClapTrap();
+		virtual ~ClapTrap();
 
 		// メンバ関数
 		void	attack(const std::string &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-	private:
+	protected:
 		std::string		_name;
 		unsigned int	_hit_points;
 		unsigned int	_energy_points;
