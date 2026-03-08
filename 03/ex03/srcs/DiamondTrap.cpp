@@ -6,7 +6,7 @@
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 17:32:10 by ssawa             #+#    #+#             */
-/*   Updated: 2026/02/28 18:40:47 by ssawa            ###   ########.fr       */
+/*   Updated: 2026/03/08 20:59:23 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@
 #include <iostream>
 
 // コンストラクタ（引数なし）
-DiamondTrap::DiamondTrap(): ClapTrap("default" "_clap_name"), \
+DiamondTrap::DiamondTrap(): ClapTrap("default_clap_name"), \
 								_name("default")
 {
 	std::cout << "DiamondTrap: Constructor(no paramater) called" << std::endl;
+	this->_hit_points = 100;
+	this->_energy_points = 50;
+	this->_attack_damage = 30;
 }
 
 // コンストラクタ（引数あり）
@@ -27,12 +30,16 @@ DiamondTrap::DiamondTrap(const std::string name): ClapTrap(name + "_clap_name"),
 													  _name(name)
 {
 	std::cout << "DiamondTrap: Constructor called" << std::endl;
+	this->_hit_points = 100;
+	this->_energy_points = 50;
+	this->_attack_damage = 30;
 }
 
 // コピーコンストラクタ
 DiamondTrap::DiamondTrap(const DiamondTrap &other): ClapTrap(other),  \
 													ScavTrap(other), \
-													FragTrap(other)
+													FragTrap(other), \
+													_name(other._name)
 {
 	std::cout << "DiamondTrap: Copy constructor called" << std::endl;
 }
@@ -54,4 +61,38 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &other)
 // デストラクタ
 DiamondTrap::~DiamondTrap()
 {
+    std::cout << "DiamondTrap: Destructor called" << std::endl;
+}
+
+void	DiamondTrap::attack(const std::string &target)
+{
+	ScavTrap::attack(target);
+}
+
+void	DiamondTrap::whoAmI()
+{
+	std::cout << "DiamondTrap name is = " << _name << ", ClapTrap name is = " << ClapTrap::_name << std::endl;
+}
+
+void	DiamondTrap::show_name()
+{
+	std::cout << "show_name called: ";
+	std::cout << this->_name << std::endl;
+}
+
+void	DiamondTrap::show_dmg()
+{
+	std::cout << "show_dmg called: ";
+	std::cout << this->_attack_damage << std::endl;
+}
+
+void	DiamondTrap::show_hp()
+{
+	std::cout << "show_hp called: ";
+	std::cout << this->_hit_points << std::endl;
+}
+void	DiamondTrap::show_energy()
+{
+	std::cout << "show_energy called: ";
+	std::cout << this->_energy_points << std::endl;
 }

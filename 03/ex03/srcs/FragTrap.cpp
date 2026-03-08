@@ -6,7 +6,7 @@
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 01:14:12 by ssawa             #+#    #+#             */
-/*   Updated: 2026/02/23 01:23:07 by ssawa            ###   ########.fr       */
+/*   Updated: 2026/03/08 21:06:00 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ FragTrap::~FragTrap()
 }
 
 // メンバ関数
-void    highFiveGuys(void)
+void	FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap: highFiveGuys called" << std::endl;
+	std::cout << "High five guys! ✋" << std::endl;
 }
