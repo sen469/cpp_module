@@ -16,8 +16,8 @@
 #include <iostream>
 
 // コンストラクタ（引数なし）
-DiamondTrap::DiamondTrap(): ClapTrap("default_clap_name"), \
-								_name("default")
+DiamondTrap::DiamondTrap(): ClapTrap("defaultDT_clap_name"), \
+								_name("defaultDT")
 {
 	std::cout << "DiamondTrap: Constructor(no paramater) called" << std::endl;
 	this->_hit_points = 100;
