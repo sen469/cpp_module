@@ -15,7 +15,7 @@
 #include <iostream>
 #include <climits>
 
-ClapTrap::ClapTrap() : _name("default"), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap() : _name("defaultCT"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
 	std::cout << "Constructor(no paramater) called" << std::endl;
 

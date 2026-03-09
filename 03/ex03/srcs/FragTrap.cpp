@@ -14,7 +14,7 @@
 #include <iostream>
 
 // 引数なしコンストラクタ
-FragTrap::FragTrap(): ClapTrap("default")
+FragTrap::FragTrap(): ClapTrap("defaultFT")
 {
 	std::cout << "FragTrap: Constructor(no paramater) called" << std::endl;
 	this->_hit_points = 100;
