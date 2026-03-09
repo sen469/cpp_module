@@ -15,7 +15,7 @@
 #include <iostream>
 #include <string>
 
-ScavTrap::ScavTrap(): ClapTrap("default")
+ScavTrap::ScavTrap(): ClapTrap("defaultST"), _guarding_gate(false)
 {
 	std::cout << "ScavTrap: Constructor(no paramater) called" << std::endl;
 	this->_hit_points = 100;
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(): ClapTrap("default")
 	this->_attack_damage = 20;
 }
 
-ScavTrap::ScavTrap(const std::string &name): ClapTrap(name)
+ScavTrap::ScavTrap(const std::string &name): ClapTrap(name), _guarding_gate(false)
 {
 	std::cout << "ScavTrap: Constructor called" << std::endl;
 	this->_hit_points = 100;
@@ -31,7 +31,7 @@ ScavTrap::ScavTrap(const std::string &name): ClapTrap(name)
 	this->_attack_damage = 20;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other): ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap &other): ClapTrap(other), _guarding_gate(other._guarding_gate)
 {
 	std::cout << "ScavTrap: Copy constructor called" << std::endl;
 }
@@ -47,6 +47,7 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &other)
 	if (this != &other)
 	{
 		ClapTrap::operator=(other);
+		this->_guarding_gate = other._guarding_gate;
 	}
 	return (*this);
 }
@@ -66,5 +67,13 @@ void	ScavTrap::attack(const std::string &target)
 
 void	ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap: guardGate called" << std::endl;
+	if (!this->_guarding_gate)
+	{
+		this->_guarding_gate = true;
+		std::cout << "ScavTrap " << this->_name << " is now guarding the gate." << std::endl;
+	}
+	else
+	{
+		std::cout << "ScavTrap " << this->_name << " is already guarding the gate." << std::endl;
+	}
 }

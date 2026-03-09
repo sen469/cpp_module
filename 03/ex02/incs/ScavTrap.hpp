@@ -23,6 +23,8 @@ class ScavTrap: public ClapTrap
 		ScavTrap();
 		ScavTrap(const std::string &name);
 		ScavTrap(const ScavTrap &other);
+
+		// 演算子オーバーロード
 		ScavTrap &operator=(const ScavTrap &other);
 
 		// デストラクタ
@@ -32,6 +34,7 @@ class ScavTrap: public ClapTrap
 		void	guardGate();
 		void	attack(const std::string &target);
 	private:
+		bool	_guarding_gate;
 };
 
 #endif
