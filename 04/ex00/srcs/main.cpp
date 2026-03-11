@@ -6,13 +6,15 @@
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:31:21 by ssawa             #+#    #+#             */
-/*   Updated: 2026/03/11 15:26:10 by ssawa            ###   ########.fr       */
+/*   Updated: 2026/03/11 15:40:40 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int	main()
 {
@@ -29,5 +31,17 @@ int	main()
 	delete meta;
 	delete j;
 	delete i;
+
+	std::cout << "============================================================" << std::endl;
+
+	const WrongAnimal* w_meta = new WrongAnimal();
+	const WrongAnimal* w_i = new WrongCat();
+
+	std::cout << w_i->getType() << std::endl;
+	w_i->makeSound();
+	// w_meta->makeSound();
+
+	delete w_meta;
+	delete w_i;
 	return (0);
 }
