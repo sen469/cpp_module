@@ -6,7 +6,7 @@
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:58:39 by ssawa             #+#    #+#             */
-/*   Updated: 2026/03/11 15:36:22 by ssawa            ###   ########.fr       */
+/*   Updated: 2026/03/11 16:15:28 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ WrongCat::~WrongCat()
 // Overloaded Operators
 WrongCat	&WrongCat::operator=(const WrongCat &other)
 {
-	WrongAnimal::operator=(other);
+	if (this != &other)
+	{
+		WrongAnimal::operator=(other);
+	}
 	return (*this);
 }
 

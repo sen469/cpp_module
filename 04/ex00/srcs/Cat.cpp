@@ -6,7 +6,7 @@
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:58:39 by ssawa             #+#    #+#             */
-/*   Updated: 2026/03/11 15:24:06 by ssawa            ###   ########.fr       */
+/*   Updated: 2026/03/11 16:02:24 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ Cat::~Cat()
 // Overloaded Operators
 Cat	&Cat::operator=(const Cat &other)
 {
-	Animal::operator=(other);
+	if (this != &other)
+	{
+		Animal::operator=(other);
+	}
 	return (*this);
 }
 

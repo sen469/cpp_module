@@ -6,7 +6,7 @@
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:58:39 by ssawa             #+#    #+#             */
-/*   Updated: 2026/03/11 15:25:39 by ssawa            ###   ########.fr       */
+/*   Updated: 2026/03/11 16:01:48 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ Animal::~Animal()
 // Overloaded Operators
 Animal	&Animal::operator=(const Animal &other)
 {
-	this->type = other.type;
+	if (this != &other)
+	{
+		this->type = other.type;
+	}
 	return (*this);
 }
 

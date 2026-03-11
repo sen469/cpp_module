@@ -6,7 +6,7 @@
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 22:58:39 by ssawa             #+#    #+#             */
-/*   Updated: 2026/03/11 15:34:05 by ssawa            ###   ########.fr       */
+/*   Updated: 2026/03/11 16:13:19 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,15 @@ WrongAnimal::~WrongAnimal()
 // Overloaded Operators
 WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &other)
 {
-	this->type = other.type;
+	if (this != &other)
+	{
+		this->type = other.type;
+	}
 	return (*this);
 }
 
 // Other functions
-std::string	WrongAnimal::getType()const
+std::string	WrongAnimal::getType() const
 {
 	return (this->type);
 }
