@@ -12,6 +12,7 @@
 
 #include "Harl.hpp"
 #include <string>
+# include <iostream>
 
 void	Harl::debug()
 {
@@ -52,6 +53,8 @@ void Harl::complain(std::string level)
 		}
 	}
 
+	if (idx == -1)
+		return;
 	void	(Harl::*func_ptr[4])() =
 	{
 		&Harl::debug,

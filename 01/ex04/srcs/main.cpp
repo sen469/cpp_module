@@ -24,6 +24,11 @@ int	main(int argc, char *argv[])
 	std::string	s1 = argv[2];
 	std::string	s2 = argv[3];
 
+	if (s1.empty())
+	{
+		std::cout << "Error: s1 cannot be empty" << std::endl;
+		return (1);
+	}
 	std::ifstream	ifs(i_name.c_str(), std::ios::in);
 	if (!ifs)
 	{
