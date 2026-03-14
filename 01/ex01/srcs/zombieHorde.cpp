@@ -13,11 +13,6 @@
 #include "Zombie.hpp"
 #include <string>
 
-void	Zombie::setname(std::string name)
-{
-	this->_name = name;
-}
-
 Zombie	*zombieHorde(int N, std::string name )
 {
 	if (N <= 0)

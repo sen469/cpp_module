@@ -14,13 +14,14 @@
 # define HUMANA_HPP
 
 # include "Weapon.hpp"
-#include <string>
+# include <string>
 
 class HumanA
 {
 	private:
 		std::string	_name;
 		Weapon		&_weapon;
+
 	public:
 		HumanA(std::string name, Weapon &w);
 		void	attack();

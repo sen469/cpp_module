@@ -20,9 +20,9 @@ int	main(int argc, char *argv[])
 	if (argc != 4)
 		return (1);
 
-	std::string		i_name = argv[1];
-	std::string		s1 = argv[2];
-	std::string		s2 = argv[3];
+	std::string	i_name = argv[1];
+	std::string	s1 = argv[2];
+	std::string	s2 = argv[3];
 
 	std::ifstream	ifs(i_name.c_str(), std::ios::in);
 	if (!ifs)

@@ -13,14 +13,13 @@
 #include "Weapon.hpp"
 #include <string>
 
-Weapon::Weapon(std::string type)
-{
-	this->setType(type);
-}
+Weapon::Weapon(void): _type("defaultW"){}
+
+Weapon::Weapon(std::string type): _type(type) { }
 
 std::string	Weapon::getType(void) const
 {
-	return (_type);
+	return (this->_type);
 }
 
 void	Weapon::setType(std::string type)

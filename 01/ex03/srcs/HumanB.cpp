@@ -13,18 +13,16 @@
 #include "HumanB.hpp"
 #include <iostream>
 
-HumanB::HumanB(std::string name)
-	: _name(name), _weapon(NULL)
-{}
+HumanB::HumanB(std::string name): _name(name), _weapon(NULL) {}
 
 void	HumanB::setWeapon(Weapon &weapon)
 {
-	_weapon = &weapon;
+	this->_weapon = &weapon;
 }
 
 void	HumanB::attack()
 {
-	if (_weapon == NULL)
+	if (this->_weapon == NULL)
 	{
 		std::cout << _name << " attacks with their " << std::endl;
 	}
