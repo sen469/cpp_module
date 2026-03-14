@@ -31,10 +31,13 @@ MAKE_FLAGS += --no-print-directory
 INCFLAGS = -I./incs
 
 
+INCDIR = incs
 SRCDIR = srcs
 
+INCS = $(foreach dir, $(shell find $(INCDIR) -type d), $(wildcard $(dir)/*.hpp))
 SRCS = $(foreach dir, $(shell find $(SRCDIR) -type d), $(wildcard $(dir)/*.cpp))
 
+# INCS = \
 # SRCS = \
 
 BASE_OBJS = $(SRCS:%.cpp=%.o)
@@ -46,7 +49,7 @@ COUNT = 0
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(INCS)
 	@printf "\r\033[92m[%s] 100%% Building $(NAME)...\033[0m\n" "$$(printf '%0.s#' $$(seq 1 $(TOTAL)))"
 	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	@echo "\n\033[32m🎉🎉 Build complete: $(NAME) 🎉🎉\033[0m\n"
@@ -75,6 +78,4 @@ re: fclean all
 run: all
 	@$(MAKE) $(MAKE_FLAGS) clean -s
 	@./$(NAME)
-
-.PHONY: all clean fclean re
 

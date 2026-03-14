@@ -38,5 +38,4 @@ class Point
 		Fixed	_y;
 };
 
-
 #endif
