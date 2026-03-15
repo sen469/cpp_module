@@ -22,6 +22,8 @@ class ClapTrap
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &other);
+
+		// 演算子オーバーロード
 		ClapTrap &operator=(const ClapTrap &other);
 
 		// デストラクタ
