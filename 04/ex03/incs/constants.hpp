@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   constants.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 18:26:24 by ssawa             #+#    #+#             */
-/*   Updated: 2026/03/16 19:12:18 by ssawa            ###   ########.fr       */
+/*   Created: 2026/03/16 12:16:34 by ssawa             #+#    #+#             */
+/*   Updated: 2026/03/16 12:17:11 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef CONSTANTS_HPP
+# define CONSTANTS_HPP
 
-#include <string>
-
-class ICharacter;
-
-class AMateria
-{
-	public:
-		AMateria(const std::string &type);
-		AMateria(const AMateria &other);
-		virtual ~AMateria();
-
-		const std::string &getType() const;
-
-		virtual AMateria	*clone() const = 0;
-		virtual void		use(ICharacter &target);
-
-	protected:
-		std::string	_type;
-};
+# define INVENTORY_SIZE 4
 
 #endif

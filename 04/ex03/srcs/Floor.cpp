@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Floor.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 18:26:24 by ssawa             #+#    #+#             */
-/*   Updated: 2026/03/16 19:12:18 by ssawa            ###   ########.fr       */
+/*   Created: 2026/03/16 17:49:13 by ssawa             #+#    #+#             */
+/*   Updated: 2026/03/16 18:28:10 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#include "Floor.hpp"
 
-#include <string>
+Floor::Floor(): _head(NULL) { }
 
-class ICharacter;
-
-class AMateria
+Floor::~Floor()
 {
-	public:
-		AMateria(const std::string &type);
-		AMateria(const AMateria &other);
-		virtual ~AMateria();
+	t_floor_node	*tmp;
 
-		const std::string &getType() const;
+	while (_head != NULL)
+	{
+		tmp = this->_head->nxt;
+		delete this->_head->m;
+		delete _head;
+		this->_head = tmp;
+	}
+}
 
-		virtual AMateria	*clone() const = 0;
-		virtual void		use(ICharacter &target);
-
-	protected:
-		std::string	_type;
-};
-
-#endif
+void	Floor::add_front(AMateria *m)
+{
+	if (m == NULL)
+	{
+		return;
+	}
+	t_floor_node	*new_node = new t_floor_node;
+	new_node->m = m;
+	new_node->nxt = this->_head;
+	this->_head = new_node;
+}

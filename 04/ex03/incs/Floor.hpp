@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Floor.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssawa <ssawa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 18:26:24 by ssawa             #+#    #+#             */
-/*   Updated: 2026/03/16 19:12:18 by ssawa            ###   ########.fr       */
+/*   Created: 2026/03/16 17:46:03 by ssawa             #+#    #+#             */
+/*   Updated: 2026/03/16 18:28:10 by ssawa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef FLOOR_HPP
+# define FLOOR_HPP
 
-#include <string>
+#include "AMateria.hpp"
+typedef struct s_floor_node
+{
+	AMateria	*m;
+	struct s_floor_node	*nxt;
+}	t_floor_node;
 
-class ICharacter;
-
-class AMateria
+class Floor
 {
 	public:
-		AMateria(const std::string &type);
-		AMateria(const AMateria &other);
-		virtual ~AMateria();
+		Floor();
+		~Floor();
+		void	add_front(AMateria *m);
 
-		const std::string &getType() const;
-
-		virtual AMateria	*clone() const = 0;
-		virtual void		use(ICharacter &target);
-
-	protected:
-		std::string	_type;
+	private:
+		t_floor_node	*_head;
 };
 
 #endif
