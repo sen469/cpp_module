@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 #include <iostream>
 
 int main()
@@ -17,19 +18,21 @@ int main()
 	s1.takeDamage(30);
 	s1.beRepaired(10);
 
-	std::cout << "\n===== Copy constructor test =====\n";
-	ScavTrap s2 = s1;   // copy ctor
-	s2.attack("copy_target");
+	std::cout << "\n===== FragTrap basic test =====\n";
+	FragTrap f1("Fragger");
+	f1.attack("dummy");
+	f1.highFivesGuys();
+	f1.takeDamage(50);
+	f1.beRepaired(20);
 
-	std::cout << "\n===== Copy assignment test =====\n";
-	ScavTrap s3("Temp");
-	s3 = s1;            // operator=
-	s3.attack("assigned_target");
+	std::cout << "\n===== Copy constructor test (FragTrap) =====\n";
+	FragTrap f2 = f1;
+	f2.attack("copy_target");
 
-	std::cout << "\n===== Polymorphism test =====\n";
-	ClapTrap* ptr = new ScavTrap("Poly");
+	std::cout << "\n===== Polymorphism test (FragTrap) =====\n";
+	ClapTrap* ptr = new FragTrap("PolyFrag");
 	ptr->attack("polymorphic_target");
-	delete ptr;  // destructor chain確認
+	delete ptr;
 
 	std::cout << "\n===== End of program =====\n";
 	return 0;

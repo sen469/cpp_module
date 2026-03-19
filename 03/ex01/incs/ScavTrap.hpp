@@ -21,7 +21,7 @@ class ScavTrap: public ClapTrap
 	public:
 		// コンストラクタ
 		ScavTrap();
-		ScavTrap(const std::string &ame);
+		ScavTrap(const std::string &name);
 		ScavTrap(const ScavTrap &other);
 
 		// デストラクタ

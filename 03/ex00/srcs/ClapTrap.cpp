@@ -53,7 +53,7 @@ void	ClapTrap::attack(const std::string &target)
 {
 	if (this->_hit_points == 0 || this->_energy_points == 0)
 	{
-		std::cout << "ClapTrap " << this->_name << "attacks failed" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " attacks failed" << std::endl;
 		return;
 	}
 
@@ -75,7 +75,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	unsigned int	tmp = this->_hit_points;
 	if (this->_hit_points == 0 || this->_energy_points == 0)
 	{
-		std::cout << "ClapTrap " << this->_name << "beRepaired failed" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " beRepaired failed" << std::endl;
 		return;
 	}
 	this->_energy_points--;
