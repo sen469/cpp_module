@@ -27,11 +27,11 @@ class Brain
 		~Brain();
 
 		// Overloaded Operators
-		Brain &operator=(const Brain &other);
+		Brain	&operator=(const Brain &other);
 
 		// Other Functions
 		std::string	getIdea(int index) const;
-		void		setIdea(int index, const std::string& idea);
+		void		setIdea(int index, const std::string &idea);
 
 	private:
 		std::string	ideas[SIZE];

@@ -15,10 +15,7 @@
 #include <iostream>
 
 // Constructors
-Ice::Ice(): AMateria("ice")
-{
-
-}
+Ice::Ice(): AMateria("ice") { }
 
 Ice::Ice(const Ice &other): AMateria(other)
 {
@@ -37,9 +34,7 @@ Ice	&Ice::operator=(const Ice &other)
 	if (this != &other)
 	{
 		if (other._type == "ice")
-		{
-			this->_type = other._type;
-		}
+			this->_type = other.getType();
 	}
 	return (*this);
 }

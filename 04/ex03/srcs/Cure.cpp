@@ -14,10 +14,7 @@
 #include <iostream>
 
 // Constructors
-Cure::Cure(): AMateria("cure")
-{
-
-}
+Cure::Cure(): AMateria("cure") { }
 
 Cure::Cure(const Cure &other): AMateria(other)
 {
@@ -36,9 +33,7 @@ Cure	&Cure::operator=(const Cure &other)
 	if (this != &other)
 	{
 		if (other._type == "cure")
-		{
-			this->_type = other._type;
-		}
+			this->_type = other.getType();
 	}
 	return (*this);
 }

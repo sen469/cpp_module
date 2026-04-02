@@ -14,9 +14,14 @@
 #include <iostream>
 
 // Constructors
-WrongAnimal::WrongAnimal()
+WrongAnimal::WrongAnimal(): type("WrongAnimal")
 {
 	std::cout << "WrongAnimal: Constructor called." << std::endl;
+}
+
+WrongAnimal::WrongAnimal(const std::string &type): type(type)
+{
+	std::cout << "WrongAnimal: Constructor with parameter called." << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &other): type(other.type)
@@ -34,9 +39,7 @@ WrongAnimal::~WrongAnimal()
 WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &other)
 {
 	if (this != &other)
-	{
-		this->type = other.type;
-	}
+		this->type = other.getType();
 	return (*this);
 }
 
@@ -44,6 +47,11 @@ WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &other)
 std::string	WrongAnimal::getType()const
 {
 	return (this->type);
+}
+
+void	WrongAnimal::setType(const std::string &type)
+{
+	this->type = type;
 }
 
 void	WrongAnimal::makeSound() const

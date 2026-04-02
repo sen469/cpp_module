@@ -13,7 +13,9 @@
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
+#define SIZE 100
 #include <string>
+
 class Brain
 {
 	public:
@@ -25,9 +27,13 @@ class Brain
 		~Brain();
 
 		// Overloaded Operators
-		Brain &operator=(const Brain &other);
+		Brain	&operator=(const Brain &other);
+
+		// Other Functions
+		std::string	getIdea(int index) const;
+		void		setIdea(int index, const std::string &idea);
 
 	private:
-		std::string	ideas[100];
+		std::string	ideas[SIZE];
 };
 #endif

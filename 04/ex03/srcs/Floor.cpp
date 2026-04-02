@@ -30,9 +30,7 @@ Floor::~Floor()
 void	Floor::add_front(AMateria *m)
 {
 	if (m == NULL)
-	{
 		return;
-	}
 	t_floor_node	*new_node = new t_floor_node;
 	new_node->m = m;
 	new_node->nxt = this->_head;

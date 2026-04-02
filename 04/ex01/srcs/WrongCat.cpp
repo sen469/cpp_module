@@ -14,10 +14,9 @@
 #include <iostream>
 
 // Constructors
-WrongCat::WrongCat()
+WrongCat::WrongCat(): WrongAnimal("WrongCat")
 {
 	std::cout << "WrongCat: Constructor called." << std::endl;
-	this->type = "WrongCat";
 }
 
 WrongCat::WrongCat(const WrongCat &other): WrongAnimal(other)
@@ -35,9 +34,7 @@ WrongCat::~WrongCat()
 WrongCat	&WrongCat::operator=(const WrongCat &other)
 {
 	if (this != &other)
-	{
 		WrongAnimal::operator=(other);
-	}
 	return (*this);
 }
 

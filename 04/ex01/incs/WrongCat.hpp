@@ -26,7 +26,7 @@ class WrongCat: public WrongAnimal
 		~WrongCat();
 
 		// Overloaded Oerators
-		WrongCat &operator=(const WrongCat &other);
+		WrongCat	&operator=(const WrongCat &other);
 
 		// Other Functions
 		void	makeSound() const;

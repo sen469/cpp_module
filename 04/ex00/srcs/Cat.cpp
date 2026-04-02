@@ -14,10 +14,9 @@
 #include <iostream>
 
 // Constructors
-Cat::Cat()
+Cat::Cat(): Animal("Cat")
 {
 	std::cout << "Cat: Constructor called." << std::endl;
-	this->type = "Cat";
 }
 
 Cat::Cat(const Cat &other): Animal(other)
@@ -35,9 +34,7 @@ Cat::~Cat()
 Cat	&Cat::operator=(const Cat &other)
 {
 	if (this != &other)
-	{
 		Animal::operator=(other);
-	}
 	return (*this);
 }
 

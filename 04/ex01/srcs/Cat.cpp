@@ -14,17 +14,14 @@
 #include <iostream>
 
 // Constructors
-Cat::Cat()
+Cat::Cat(): Animal("Cat"), _brain(new Brain)
 {
 	std::cout << "Cat: Constructor called." << std::endl;
-	this->type = "Cat";
-	this->_brain = new Brain;
 }
 
-Cat::Cat(const Cat &other): Animal(other)
+Cat::Cat(const Cat &other): Animal(other), _brain(new Brain (*other._brain))
 {
 	std::cout << "Cat: Copy Constructor called." << std::endl;
-	this->_brain = new Brain(*other._brain);
 }
 
 // Destructors
@@ -40,7 +37,7 @@ Cat	&Cat::operator=(const Cat &other)
 	if (this != &other)
 	{
 		Animal::operator=(other);
-		*(this->_brain) = *(other._brain);
+		*(this->_brain) = *(other.getBrain());
 	}
 	return (*this);
 }

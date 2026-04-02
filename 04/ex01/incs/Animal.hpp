@@ -20,6 +20,7 @@ class Animal
 	public:
 		// Constructors
 		Animal();
+		Animal(const std::string &type);
 		Animal(const Animal &other);
 
 		// Destructors
@@ -29,10 +30,13 @@ class Animal
 		Animal &operator=(const Animal &other);
 
 		// Other functions
-		std::string			getType() const;
-		virtual void		makeSound() const;
+		std::string		getType() const;
+		virtual void	makeSound() const;
 
 	protected:
+		void			setType(const std::string &type);
+
+	private:
 		std::string	type;
 };
 

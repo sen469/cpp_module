@@ -14,9 +14,14 @@
 #include <iostream>
 
 // Constructors
-Animal::Animal()
+Animal::Animal(): type("Animal")
 {
 	std::cout << "Animal: Constructor called." << std::endl;
+}
+
+Animal::Animal(const std::string &type): type(type)
+{
+	std::cout << "Animal: Constructor (with parameter) called." << std::endl;
 }
 
 Animal::Animal(const Animal &other): type(other.type)
@@ -34,16 +39,19 @@ Animal::~Animal()
 Animal	&Animal::operator=(const Animal &other)
 {
 	if (this != &other)
-	{
-		this->type = other.type;
-	}
+		this->type = other.getType();
 	return (*this);
 }
 
 // Other functions
-std::string	Animal::getType()const
+std::string	Animal::getType() const
 {
 	return (this->type);
+}
+
+void	Animal::setType(const std::string &type)
+{
+	this->type = type;
 }
 
 void	Animal::makeSound() const

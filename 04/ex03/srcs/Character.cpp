@@ -21,30 +21,22 @@
 Character::Character(): _name("defaultC"), _floor()
 {
 	for (int i = 0; i < INVENTORY_SIZE; i++)
-	{
 		this->_inventory[i] = NULL;
-	}
 }
 
 Character::Character(const std::string &name): _name(name), _floor()
 {
 	for (int i = 0; i < INVENTORY_SIZE; i++)
-	{
 		this->_inventory[i] = NULL;
-	}
 }
 Character::Character(const Character &other): _name(other._name), _floor()
 {
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
 		if (other._inventory[i] != NULL)
-		{
 			this->_inventory[i] = other._inventory[i]->clone();
-		}
 		else
-		{
 			this->_inventory[i] = NULL;
-		}
 	}
 }
 
@@ -54,10 +46,7 @@ Character::~Character()
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
 		if (this->_inventory[i] != NULL)
-		{
-			// ERROR
 			delete this->_inventory[i];
-		}
 	}
 	std::cout << "Character: Destructor called" << std::endl;
 }

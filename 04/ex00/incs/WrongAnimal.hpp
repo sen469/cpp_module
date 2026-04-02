@@ -20,19 +20,23 @@ class WrongAnimal
 	public:
 		// Constructors
 		WrongAnimal();
+		WrongAnimal(const std::string &type);
 		WrongAnimal(const WrongAnimal &other);
 
 		// Destructors
 		~WrongAnimal();
 
 		// Overloaded Oerators
-		WrongAnimal &operator=(const WrongAnimal &other);
+		WrongAnimal	&operator=(const WrongAnimal &other);
 
 		// Other functions
-		std::string			getType() const;
+		std::string	getType() const;
 		void		makeSound() const;
 
 	protected:
+		void		setType(const std::string &type);
+
+	private:
 		std::string	type;
 };
 

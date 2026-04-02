@@ -23,7 +23,7 @@ Brain::Brain(const Brain &other)
 {
 	std::cout << "Brain: Copy Constructor called." << std::endl;
 	for (int i = 0; i < SIZE; i++)
-		this->ideas[i] = other.ideas[i];
+		this->ideas[i] = other.getIdea(i);
 }
 
 // Destructors
@@ -33,12 +33,12 @@ Brain::~Brain()
 }
 
 // Overloaded Operators
-Brain &Brain::operator=(const Brain &other)
+Brain	&Brain::operator=(const Brain &other)
 {
 	if (this != &other)
 	{
 		for (int i = 0; i < SIZE; i++)
-			this->ideas[i] = other.ideas[i];
+			this->ideas[i] = other.getIdea(i);
 	}
 	return (*this);
 }
@@ -48,10 +48,10 @@ std::string	Brain::getIdea(int index) const
 {
 	if (index >= 0 && index < SIZE)
 		return (this->ideas[index]);
-	return (""); // Return empty string or throw exception for out of bounds
+	return ("");
 }
 
-void	Brain::setIdea(int index, const std::string& idea)
+void	Brain::setIdea(int index, const std::string &idea)
 {
 	if (index >= 0 && index < SIZE)
 		this->ideas[index] = idea;
