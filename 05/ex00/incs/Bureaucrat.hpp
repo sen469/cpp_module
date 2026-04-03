@@ -13,9 +13,8 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#include <exception>
-#include <fstream>
-#include <string>
+# include <exception>
+# include <string>
 
 class Bureaucrat
 {
