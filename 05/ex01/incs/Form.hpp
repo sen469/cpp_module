@@ -33,7 +33,7 @@ class Form
 		Form	&operator=(const Form &other);
 
 		// Exception
-		class GradeToolHighException: public std::exception
+		class GradeTooHighException: public std::exception
 		{
 			public:
 				virtual const char	*what() const throw();
@@ -46,7 +46,7 @@ class Form
 		};
 
 		// Getter
-		const std::string	getName() const;
+		const std::string	&getName() const;
 		int					getSignGrade() const;
 		int					getExecGrade() const;
 		bool				getSigned() const;
