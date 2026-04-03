@@ -24,7 +24,7 @@ class FragTrap: public ClapTrap
 		FragTrap(const FragTrap &other);
 
 		// 演算子オーバーロード
-		FragTrap &operator=(const FragTrap &other);
+		FragTrap	&operator=(const FragTrap &other);
 
 		// デストラクタ
 		~FragTrap();

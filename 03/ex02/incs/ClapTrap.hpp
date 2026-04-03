@@ -24,15 +24,15 @@ class ClapTrap
 		ClapTrap(const ClapTrap &other);
 
 		// 演算子オーバーロード
-		ClapTrap &operator=(const ClapTrap &other);
+		ClapTrap	&operator=(const ClapTrap &other);
 
 		// デストラクタ
 		virtual ~ClapTrap();
 
 		// メンバ関数
-		void	attack(const std::string &target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		virtual void	attack(const std::string &target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
 
 	protected:
 		std::string		_name;

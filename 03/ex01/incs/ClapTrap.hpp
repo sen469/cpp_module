@@ -27,7 +27,7 @@ class ClapTrap
 		virtual ~ClapTrap();
 
 		// 演算子オーバーロード
-		ClapTrap &operator=(const ClapTrap &other);
+		ClapTrap	&operator=(const ClapTrap &other);
 
 		// メンバ関数
 		virtual void	attack(const std::string &target);

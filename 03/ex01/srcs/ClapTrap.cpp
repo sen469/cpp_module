@@ -35,7 +35,7 @@ ClapTrap::ClapTrap(const ClapTrap &other): _name(other._name), \
 	std::cout << "ClapTrap: Copy constructor called" << std::endl;
 }
 
-ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+ClapTrap	&ClapTrap::operator=(const ClapTrap &other)
 {
 	std::cout << "ClapTrap: Copy assignment operator called" << std::endl;
 	if (this != &other)

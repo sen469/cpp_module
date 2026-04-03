@@ -38,7 +38,7 @@ FragTrap::FragTrap(const FragTrap &other): ClapTrap(other)
 }
 
 // 代入演算子オーバーライド
-FragTrap &FragTrap::operator=(const FragTrap &other)
+FragTrap	&FragTrap::operator=(const FragTrap &other)
 {
 	std::cout << "FragTrap: Copy assignment operator called" << std::endl;
 	if (this != &other)

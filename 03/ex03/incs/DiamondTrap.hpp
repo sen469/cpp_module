@@ -20,20 +20,22 @@
 class DiamondTrap: public ScavTrap, public FragTrap
 {
 	public:
-		// コンストラクタ引数なし
+		// コンストラクタ
 		DiamondTrap();
-		// コンストラクタ引数あり
 		DiamondTrap(std::string name);
-		// コピーコンストラクタ
 		DiamondTrap(const DiamondTrap &other);
+
 		// 代入演算子オーバーロード
 		DiamondTrap &operator=(const DiamondTrap &other);
+
 		// デストラクタ
 		~DiamondTrap();
+
 		// メンバ関数
 		void		attack(const std::string &target);
 		void		whoAmI();
 
+		// Getter
 		void		show_name();
 		void		show_hp();
 		void		show_dmg();

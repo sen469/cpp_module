@@ -22,7 +22,9 @@ class FragTrap: virtual public ClapTrap
 		FragTrap();
 		FragTrap(const std::string &name);
 		FragTrap(const FragTrap &other);
-		FragTrap &operator=(const FragTrap &other);
+
+		// 演算子オーバーロード
+		FragTrap	&operator=(const FragTrap &other);
 
 		// デストラクタ
 		~FragTrap();

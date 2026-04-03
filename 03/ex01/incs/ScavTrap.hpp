@@ -28,7 +28,7 @@ class ScavTrap: public ClapTrap
 		~ScavTrap(void);
 
 		// 演算子オーバーロード
-		ScavTrap &operator=(const ScavTrap &other);
+		ScavTrap	&operator=(const ScavTrap &other);
 
 		// メンバ変数
 		void	guardGate();
