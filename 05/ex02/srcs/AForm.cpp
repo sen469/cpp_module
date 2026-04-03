@@ -82,9 +82,7 @@ bool	AForm::getSigned() const
 void	AForm::beSigned(const Bureaucrat &b)
 {
 	if (b.getGrade() > this->getSignGrade())
-	{
 		throw AForm::GradeTooLowException();
-	}
 	this->_signed = true;
 }
 

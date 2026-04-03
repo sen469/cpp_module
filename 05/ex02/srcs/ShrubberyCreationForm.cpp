@@ -15,9 +15,9 @@
 #include <iostream>
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(): AForm("presidential pardon", 145, 137), _target("defaultS") { }
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("shrubbery creation", 145, 137), _target("defaultS") { }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target): AForm("presidential pardon", 145, 137), _target(target) { }
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target): AForm("shrubbery creation", 145, 137), _target(target) { }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other): AForm(other), _target(other._target) { }
 

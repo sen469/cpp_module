@@ -27,7 +27,7 @@ class AForm
 		AForm(const AForm &other);
 
 		// Destructors
-		~AForm();
+		virtual ~AForm();
 
 		// Overloaded Operators
 		AForm	&operator=(const AForm &other);

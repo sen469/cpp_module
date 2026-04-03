@@ -13,10 +13,11 @@
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 #include <iostream>
+#include <cstdlib>
 
 // COnstructors
-RobotomyRequestForm::RobotomyRequestForm(): AForm("presidential pardon", 72, 45), _target("defaultR") { }
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm("presidential pardon", 72, 45), _target(target) { }
+RobotomyRequestForm::RobotomyRequestForm(): AForm("robotomy request", 72, 45), _target("defaultR") { }
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm("robotomy request", 72, 45), _target(target) { }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other): AForm(other), _target(other._target) { }
 
