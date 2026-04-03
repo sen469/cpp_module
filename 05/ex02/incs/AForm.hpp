@@ -52,7 +52,7 @@ class AForm
 		};
 
 		// Getter
-		const std::string	getName() const;
+		const std::string	&getName() const;
 		int					getSignGrade() const;
 		int					getExecGrade() const;
 		bool				getSigned() const;

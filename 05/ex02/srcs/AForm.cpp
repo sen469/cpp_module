@@ -58,7 +58,7 @@ const char	*AForm::NotSignedException::what() const throw()
 }
 
 // Getter
-const std::string	AForm::getName() const
+const std::string	&AForm::getName() const
 {
 	return (this->_name);
 }
