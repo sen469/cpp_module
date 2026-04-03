@@ -43,6 +43,7 @@ std::string	RobotomyRequestForm::getTarget() const
 
 void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
+	std::srand(std::time(NULL));
 	this->checkRequirements(executor);
 	std::cout << "* drilling noises: BZZZZZZZZZT! *" << std::endl;
 	if (std::rand() % 2 == 0)
