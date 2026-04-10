@@ -13,7 +13,9 @@
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
-#include <vector>
+# include <iterator>
+# include <stdexcept>
+# include <vector>
 
 class Span
 {
@@ -38,9 +40,16 @@ class Span
 		unsigned int	longestSpan() const;
 		unsigned int	shortestSpan() const;
 
+		template <typename T>
+		void	addNumber(T begin, T end)
+		{
+			if (this->_v.size() + std::distance(begin, end) > this->_max_size)
+				throw std::out_of_range("Span error: Full");
+			this->_v.insert(this->_v.end(), begin, end);
+		}
+
 	private:
 		Span();
-		unsigned int		get_maxsize() const;
 		unsigned int		_max_size;
 		std::vector<int>	_v;
 

@@ -25,7 +25,7 @@ Span	&Span::operator=(const Span &other)
 {
 	if (this != &other)
 	{
-		this->_max_size = other.get_maxsize();
+		this->_max_size = other._max_size;
 		this->_v = other._v;
 	}
 	return (*this);
@@ -34,11 +34,6 @@ Span	&Span::operator=(const Span &other)
 unsigned int	Span::size() const
 {
 	return (_v.size());
-}
-
-unsigned int	Span::get_maxsize() const
-{
-	return (this->_max_size);
 }
 
 void	Span::addNumber(int n)
@@ -50,22 +45,23 @@ void	Span::addNumber(int n)
 
 unsigned int	Span::longestSpan() const
 {
-	if (this->size() < 2)
+	if (this->size() < 2U)
 		throw std::logic_error("Span error: Not enough elements to calculate a span (minimum 2 required).");
-	std::pair<std::vector<int>::iterator, std::vector<int>::iterator> p = std::minmax_element(this->_v.begin(), this->_v.end());
-	return (*p.second - *p.first);
+	int	mx = *std::max_element(this->_v.begin(), this->_v.end());
+	int	mn = *std::min_element(this->_v.begin(), this->_v.end());
+	return (static_cast<unsigned int>(mx) - static_cast<unsigned int>(mn));
 }
 
 unsigned int	Span::shortestSpan() const
 {
-	if (this->size() < 2)
+	if (this->size() < 2U)
 		throw std::logic_error("Span error: Not enough elements to calculate a span (minimum 2 required).");
 	std::vector<int>	sorted = this->_v;
-	unsigned int		ret = 0;
+	unsigned int		ret = UINT_MAX;
 	unsigned int		dif;
 
 	std::sort(sorted.begin(), sorted.end());
-	for (size_t i = 0; i < sorted.size() - 1; i++)
+	for (size_t i = 0U; i < sorted.size() - 1; i++)
 	{
 		dif = static_cast<unsigned int>(sorted[i + 1]) - static_cast<unsigned int>(sorted[i]);
 		ret = std::min(ret, dif);
